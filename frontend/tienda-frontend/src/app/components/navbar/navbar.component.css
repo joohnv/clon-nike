@@ -1,0 +1,70 @@
+nav {
+    padding: 10px;
+    background-color: white;
+}
+
+.logo {
+    width: 90px;
+}
+
+.desktop-menu {
+    margin-top: 24px;
+}
+
+.desktop-menu ul {
+    padding: 0;
+    margin: 0;
+}
+
+.desktop-menu ul li {
+    list-style-type: none;
+    color: black;
+    display: inline-block;
+    font-size: 18px;
+    margin-left: 26px;
+}
+
+.desktop-menu ul li a{
+    text-decoration: none;
+    color: black;
+}
+
+.desktop-menu ul li:hover {
+    font-size: 19px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.menu_icon {
+    display: none;
+}
+
+/* Media Query para pantallas con un ancho máximo de 900px */
+@media screen and (max-width: 900px) {
+    .desktop-menu {
+        position: fixed;
+        right: -280px;
+        top: 64px;
+        width: 280px;
+        height: 100%;
+        transition: 0.4s ease-in-out;
+    }
+
+    .desktop-menu ul li {
+        display: block;
+        text-align: left;
+        margin: 0;
+        padding: 10px 0 10px 26px;
+    }
+
+    .menu_icon {
+        display: block;
+        color: black;
+        font-size: 40px;
+        padding: 10px;
+    }
+
+    .mobile-menu {
+        right: 0;
+    }
+}

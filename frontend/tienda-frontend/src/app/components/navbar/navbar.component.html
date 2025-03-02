@@ -1,0 +1,23 @@
+<nav>   
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-3 col-3">
+                <div class="logo-container">
+                    <img src="/logo.jpg" alt="Logo" class="logo">
+                </div>
+            </div>
+            <div class="col-md-9 col-sm-9 col-9 text-end">
+                <div class="menu_icon" (click)="openMenu()">
+                    <i [class]="menu_icon"></i> 
+                </div>
+                <div class="desktop-menu" [class.mobile-menu]="menuValue">
+                    <ul>
+                        <li><a routerLink="/home">Home</a></li>
+                        <li><a routerLink="/products">Products</a></li>
+                        <li><a routerLink="/admin" >Admin</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
