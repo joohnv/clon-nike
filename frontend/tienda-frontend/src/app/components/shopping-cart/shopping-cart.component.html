@@ -1,0 +1,14 @@
+<h2>Carrito</h2>
+<div class="cart-container" *ngIf="cart.length > 0; else emptyCart">
+  <div class="cart-item" *ngFor="let product of cart">
+    <img [src]="'http://localhost:5000' + product.image" alt="{{ product.name }}" class="cart-image">
+    <div class="cart-info">
+      <p class="cart-name">{{ product.name }}</p>
+      <p class="cart-price">{{ product.price }}€</p>
+    </div>
+  </div>
+  <button (click)="buy()" class="buy-btn">Comprar</button>
+</div>
+<ng-template #emptyCart>
+  <p>El carrito está vacío</p>
+</ng-template>

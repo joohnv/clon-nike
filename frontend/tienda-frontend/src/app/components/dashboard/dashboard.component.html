@@ -1,0 +1,53 @@
+<div class="dashboard-container">
+    <h2>Administrar Productos</h2>
+  
+    <!-- Formulario para agregar/editar productos -->
+    <form (ngSubmit)="isEditing ? updateProduct(editedProductId, product, image) : addProduct(product, image)" #productForm="ngForm">
+      
+      <input type="text" [(ngModel)]="product.name" name="name" placeholder="Nombre" required #name="ngModel">
+      <div *ngIf="name.invalid && name.touched">El nombre es obligatorio</div>
+  
+      <input type="text" [(ngModel)]="product.desc" name="desc" placeholder="Descripción" required>
+
+      <input type="number" [(ngModel)]="product.price" name="price" placeholder="Precio" required>
+  
+      <input type="number" [(ngModel)]="product.stock" name="stock" placeholder="Stock" required>
+  
+      <input type="file" (change)="onFileSelected($event)">
+  
+      <button type="submit" [disabled]="productForm.invalid">
+        {{ isEditing ? 'Actualizar' : 'Agregar' }} Producto
+      </button>
+  
+      <button type="button" *ngIf="isEditing" (click)="cancelEdit()">Cancelar</button>
+  
+    </form>
+  
+    <!-- Tabla de productos -->
+    <table>
+      <thead>
+        <tr>
+          <th>Imagen</th>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Precio</th>
+          <th>Stock</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td><img *ngIf="product.image" [src]="'http://localhost:5000' + product.image" alt="Imagen" width="50"></td>
+          <td>{{ product.name }}</td>
+          <td>{{ product.desc }}</td>
+          <td>{{ product.price | currency }}</td>
+          <td>{{ product.stock }}</td>
+          <td>
+            <button (click)="editProduct(product)">Editar</button>
+            <button (click)="deleteProduct(product._id)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

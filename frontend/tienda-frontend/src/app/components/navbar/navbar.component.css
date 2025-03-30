@@ -9,11 +9,18 @@ nav {
 
 .desktop-menu {
     margin-top: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
 }
 
 .desktop-menu ul {
-    padding: 0;
+    display: flex;
+    gap: 15px;
     margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 .desktop-menu ul li {
@@ -37,6 +44,33 @@ nav {
 
 .menu_icon {
     display: none;
+}
+
+.auth-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.auth-section a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.auth-section button {
+    background-color: #e74c3c;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.auth-section button:hover {
+    background-color: #c0392b;
 }
 
 /* Media Query para pantallas con un ancho máximo de 900px */
